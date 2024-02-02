@@ -83,9 +83,7 @@ $(function(){
                 </div>
             </div>`;
           });
-
           $('#pdlist').html(lists);
-
        });
   
 }); //jquery
