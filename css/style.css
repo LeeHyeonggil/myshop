@@ -3,15 +3,14 @@ body{
     color: var(--primary-color);
     font-size:16px;
 }
-/*webkit scrollbar 디자인 가능*/
 body::-webkit-scrollbar{
-    width: 8px;
+    width:8px;
 }
 body::-webkit-scrollbar-track{
-    background-color: pink;
+    background-color:pink;
 }
 body::-webkit-scrollbar-thumb{
-    background-color: #dd2a7b;
+    background-color:#dd2a7b;
 }
 a,a:link{
     text-decoration:none;
@@ -22,7 +21,7 @@ a:hover{
 }
 .container-max{
     width: 1580px;
-    max-width:100%px;
+    max-width:100%;
     padding-left:80px;
     padding-right:80px;
     margin-left:auto;
@@ -33,26 +32,25 @@ a:hover{
         max-width: 1440px;
     }
 }
-/***************** HEADER ***********************/
+/*################ header ######################*/
 
 header>.container-max>.row{
-    flex-flow: column nowrap;
+    flex-flow:column nowrap;
 }
-Header.fixed>.container-max>.row{
-    flex-flow: row nowrap;
+header.fixed>.container-max>.row{
+    flex-flow:row nowrap;
 }
 header.fixed .brand{
-    order: 1;
-    font-size: 25px;
-    margin-top: 5px;
-    margin-right: 30px;
-    width: 300px;
+    order:1;
+    font-size:25px;
+    margin-top:5px;
+    margin-right:30px;
+    width:300px;
 }
 header.fixed nav.top{
-    order: 2;
-    width: calc(100% -300px);
+    order:2;
+    width: calc(100% - 300px);
 }
-
 
 /*################ TOP NAVIGATION ##############*/
 .top ul.nav{
@@ -71,6 +69,10 @@ header.fixed nav.top{
     background:#ddd;
     border-radius:50%;
     text-align:center;
+}
+.global{
+    border-top:1px solid var(--gray-color);
+    border-bottom:1px solid var(--gray-color);
 }
 .mem{
       font-weight: 700;
@@ -211,6 +213,9 @@ input.search{
 nav.global{
     box-shadow:0 10px 10px 0 rgba(0,0,0,0.05);
 }
+.category-parent{
+    position:relative;
+}
 .category{
     line-height:50px;
     display:block;
@@ -218,17 +223,19 @@ nav.global{
     width:50px;
     height:50px;
     text-align:center;
-    position:relative;
 }
-.category:hover{
+.category:hover,
+.category-act{
     background-color:var(--dark-color);
 }
-.category:hover>a{
+.category:hover>a,
+.category-act>a{
     color:var(--white-color);
 }
 .category-subnav{
     position:absolute;
     width: 1450px;
+    max-width:100%;
     height:600px;
     z-index:101;
     background:#fff;
@@ -328,6 +335,51 @@ ul.global-nav{
     text-transform: uppercase;
     line-height:50px;
 }
+
+
+@media (max-width:768px){
+    .container-max{
+        padding-left:10px;
+        padding-right:10px;
+    }
+    .brand{ 
+        font-size:25px;
+    }   
+    .global{
+        border-top:none;
+    }
+    .pr-category,
+    .global-nav{
+        display:none;
+    }
+    .category{
+        margin-left:5px;
+    }
+    .category i{
+        font-size:25px;
+    }
+    .category-subnav{
+        flex-direction:column;
+    }
+
+    .category-subnav-view{
+        flex-direction:column;
+        width:100%;
+    }
+  
+    .category-subnav-view li{
+        width:100%;
+     }
+     .global-nav-view{
+        width:100%;
+     }
+     .category-subnav-view li a,
+     .global-nav-view a{
+        padding:8px 10px;
+     }
+}
+
+
 /*********** HERO **************/
 .hero{
     overflow:hidden;
@@ -335,6 +387,9 @@ ul.global-nav{
 .mySlick img{
     margin-left:auto;
     margin-right:auto;
+    object-fit:cover;
+    width:100%;
+    height:500px;
 }
 .slick-dots {
     bottom: 10px;
@@ -455,62 +510,62 @@ span.or{
     color:var(--white-color);
 }
 .service h4{
-    font-size: 14px;
-    font-weight: 700;
+    font-size:14px;
+    font-weight:700;
 }
 .service h4 span.tel{
-    font-size: 20px;
-    margin-left: 15px;
-    color: #dd2a7b;
+    font-size:20px;
+    margin-left:15px;
+    color:#f7b5d3;
 }
 .service h4 a.kakao{
-    font-weight: 300;
+    font-weight:300;
     font-size: 20px;
-    margin-left: 15px;
-    color: rgb(2525,255,0);
+    margin-left:15px;
+    color:rgb(255,255,0);
     text-decoration: none;
 }
 .service h4 a.kakao:hover{
-    background: transparent;
-    color: #000;
+    background:transparent;
+    color:#000;
 }
 p{
-    font-size: 13px;
-    font-weight: 300;
+    font-size:13px;
+    font-weight:300;
 }
 span.bank{
-    margin-right: 20px;
-    padding-bottom: 10px;
-    font-size: 13px;
-    font-weight: 300;
-    white-space: nowrap;
+    margin-right:30px;
+    padding-bottom:15px;
+    font-size:13px;
+    font-weight:300;
+    white-space:nowrap;
 }
 .bank-box{
-    margin-bottom: 20px;
+    margin-bottom:20px;
 }
 .linebox{
-    border-left: 1px solid rgba(255,255,255,0.3);
-    padding-left: 50px;
-    height: 100%;
+    border-left:1px solid rgba(255,255,255,0.3);
+    padding-left:50px;
+    height:100%;
+}
+.df-escrow-inicis{
+    cursor: pointer;
+    background:var(--gray-color);
+    padding:20px;
+    border-radius:10px;
+    display:inline-block;
+    line-height:1;
+}
+.df-escrow-inicis p{
+    padding:0;
+    margin:0;
+    color:black;
 }
 /*############ footer ##############*/
 footer{
     padding-top:15px;
     padding-bottom:15px;
     font-family: 'Roboto Slab', serif;
-}
-.df-escrow-inicis{
-    cursor: pointer;
-    background: var(--gray-color);
-    padding: 20px;
-    border-radius: 10px;
-    display: inline-block;
-    line-height: 1;
-}
-.df-escrow-inicis p{
-    padding: 0;
-    margin: 0;
-    color: black;
 }
 
 @media (min-width: 768px){
@@ -523,202 +578,262 @@ footer{
    }
 }
 
-/*###########################리모콘######################*/
+
+/*############ 리모콘 ###############*/
 .remotecontrol{
-    position: fixed;
-    width: 50px;
-    border: 1px solid var(--gray-dark-color);
-    z-index: 9999;
-    bottom: 30px;
-    right: 30px;
-    font-size: 2em;
-    text-align: center;
-    line-height: 1.4;
-    background-color: rgba(255,255,255,0.8);
+    position:fixed;
+    width:50px;
+    border:1px solid var(--gray-dark-color);
+    z-index:9999;
+    bottom:30px;
+    right:30px;
+    font-size:2em;
+    text-align:center;
+    line-height:1.4;
+    background-color:rgba(255,255,255,0.8);
 }
 .remotecontrol .news,
 .remotecontrol .hots{
-    font-size: 0.8em;
-    display: block;
+    font-size:0.8em;
+    display:block;
     font-style: italic;
 }
-/*######################LIST#######################*/
+
+/*############LIST ###################*/
 .list01{
-    height: 500px;
-    background-color: #f7b5d3;
+    height:500px;
+    background-color:#f7b5d3;
 }
 .list01>.container{
-    height: 100%;
-    padding-top: 100px;
-    background: url(../images/images01.jpg)no-repeat right center;
+    height:100%;
+    padding-top:100px;
+    background: url(../images/sample01.png) no-repeat right center;
     background-size: contain;
 }
 .list01>.container h4{
-    font-size: 30px;
-    color: #c56590;
-    font-weight: 300;
+    font-size:30px;
+    color:#c56590;
+    font-weight:300;
 }
 .list01>.container h1{
-    font-size: 100px;
-    letter-spacing: -10px;
-    color: #dd2a7b;
-    font-weight: 900;
-    line-height: 1;
-}
+    font-size:80px;
+    letter-spacing:-5px;
+    color:#dd2a7b;
+    font-weight:900;
+    line-height:1;
+}    
 .list01>.container p{
-    font-size: 25px;
-    color: rgba(0,0,0,0.8);
-    font-weight: bold;
-    margin-top: 30px;
-    width: 800px;
+    font-size:20px;
+    color:rgba(0,0,0,0.6);
+    font-weight:500;
+    margin-top:30px;
+    width:800px;
 }
 .pgbox{
-    margin-top: 30px;
-    margin-bottom: 100px;
-    width: 100%;
-    display: flex;
+    margin-top:30px;
+    margin-bottom:100px;
+    width:100%;
+    display:flex;
     justify-content: center;
 }
 .pgbox i{
-    line-height: 1;
+    line-height:1;
 }
 .pgbox .page-item.active .page-link{
-    background: #c56590;
+    background:#c56590;
 }
 .page-item .page-link{
-    color: var(--dark-color);
+    color:var(--dark-color);
 }
 .page-item.disabled .page-link{
-    color: #ccc;
+    color:#ccc;
 }
 
-/*################ DETAIL ####################*/
-/* 이미지가 작어서 강제로 늘림 원 쇼핑몰에서는 이미지 크기를 수정할 것*/
+/*############# DETAIL ################*/
+/** 이미지가 작아서 강제로 늘림 원 쇼핑몰에서는 이미지 크기를 수정할 것 */
 .breadcrumb{
-    background-color: #fff;
+    background-color:transparent;
 }
 .img-box img{
-    width: 100%;
+   width:100%;
 }
 .img-thumb-box{
-    margin-top: 15px;
-    margin-bottom: 50px;
+    margin-top:15px;
+    margin-bottom:50px;
 }
 .img-thumb-box img{
-    height: 95px;
-    margin-right: 13px;
-    cursor: pointer;
+   height: 95px;
+   margin-right:13px;
+   cursor:pointer;
 }
 .img-thumb-box img:last-child{
-    margin-right: 0;
+    margin-right:0;
 }
 .pr-list h1{
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 30px;
+    font-size:20px;
+    font-weight:600;
+    line-height:30px;
 }
 .pr-list h1 span{
-    font-size: 16px;
-    font-weight: 400;
-    margin-left: 30px;
+    font-size:14px;
+    font-weight:400;
     text-transform: lowercase;
     vertical-align: middle;
-    margin-left: 8px;
+    margin-left:8px;
 }
 .pr-list p{
-    font-size: 15px;
-    font-weight: 400;
-    margin-bottom: 30px;
+    font-size:15px;
+    font-weight:400;
+    margin-bottom:30px;
 }
-.pr0list h1 span:first-child{
-    margin-left: 30px;
+.pr-list h1 span:first-child{
+    margin-left:30px;
 }
 .ul-pr-list{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    border-top: 1px solid var(--gray-color);
-    padding-top: 15px;
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    border-top:1px solid var(--gray-color);
+    padding-top:15px;
 }
 .ul-pr-list li{
     padding: 12px 0;
-    font-size: 14px;
+    font-size:14px;
 }
 .ul-pr-list li span{
-    color: #f1730b;
-    font-weight: 600;
+    color:#f1730b;
+    font-weight:600;
 }
 .ul-pr-list li.line{
     border-top: 1px solid var(--gray-color);
 }
 .title-label{
-    display: inline-block;
+    display:inline-block;
     width: 120px;
-    font-weight: 600;
+    font-weight:600;
 }
 .colors input[type=radio]{
-    display: none;
+    display:none;
 }
 .colors input[type=radio]+label{
-    display: inline-block;
-    cursor: pointer;
-    width: 20px;
-    height: 20px;
-    margin-right: 20px;
-    position: relative;
+    display:inline-block;
+    cursor:pointer;
+    width:20px;
+    height:20px;
+    margin-right:20px;
+    position:relative;
 }
 .colors input[type=radio]:checked+label.black::after{
-    content: "검정";
-    display: block;
-    position: absolute;
-    width: 50px;
-    top: 25px;
-    left: -3px;
-}
-.colors input[type=radio]:checked+label.pink::after{
-    content: "분홍";
-    display: block;
-    position: absolute;
-    width: 50px;
-    top: 25px;
-    left: -3px;
-}
-.colors input[type=radio]:checked+label.blue::after{
-    content: "파랑";
-    display: block;
-    position: absolute;
-    width: 50px;
-    top: 25px;
-    left: -3px;
+    content:"검정";
+    display:block;
+    position:absolute;
+    width:50px;
+    top:25px;
+    left:-3px;
 }
 .colors input[type=radio]:checked+label.red::after{
-    content: "빨강";
-    display: block;
-    position: absolute;
-    width: 50px;
-    top: 25px;
-    left: -3px;
+    content:"빨강";
+    display:block;
+    position:absolute;
+    width:50px;
+    top:25px;
+    left:-3px;
+}
+.colors input[type=radio]:checked+label.blue::after{
+    content:"파랑";
+    display:block;
+    position:absolute;
+    width:50px;
+    top:25px;
+    left:-3px;
+}
+.colors input[type=radio]:checked+label.pink::after{
+    content:"핑크";
+    display:block;
+    position:absolute;
+    width:50px;
+    top:25px;
+    left:-3px;
 }
 .black{
-    background-color: black;
+    background-color:black;
 }
 .pink{
-    background-color: pink;
-}
-.blue{
-    background-color: blue;
+    background-color:pink;
 }
 .red{
-    background-color: red;
+    background-color:red;
+}
+.blue{
+    background-color:blue;
 }
 p.selected{
-    margin-left: 120px;
-    margin-top: 5px;
-    margin-bottom: 0;
-    font-weight: 500;
+    margin-left:120px;
+    margin-top:5px;
+    margin-bottom:0;
+    font-weight:500;
 }
 select.size{
+    border:1px solid var(--gray-color);
+    padding:8px 10px;
+    width:200px;
+}
+.add-opt{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+.add-opt li{
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.btn-outline-line {
+    color: #6c757d;
+    border-color: var(--gray-color);
+}
+.btn-outline-line:hover,
+.btn-outline-line:active{
+    background:var(--gray-color);
+}
+input[type=number].quantity{
+    height: calc(1.5em + 1rem + 2px);
+    width: 50px;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height:1.5;
+    color:var(--dark-color);
     border: 1px solid var(--gray-color);
-    padding: 8px 10px;
-    width: 200px;
+}
+.btn-detail{
+    display:block;
+    border:1px solid var(--gray-dark-color);
+    margin-top:50px;
+    width:100%;
+    padding:15px;
+    background-color:#fcedf3;
+    transition: all 300ms;
+}
+.btn-detail:hover,
+.btn-detail:active{
+    background-color:#fdd6e6;
+}
+.btn-line{
+    width:48%;
+    display:inline-block;
+    border:1px solid var(--gray-dark-color);
+    margin-top:15px;
+    margin-bottom:50px;
+    padding:15px;
+    transition: all 300ms;
+}
+.btn-line:hover,
+.btn-line:active{
+    background-color:#fcedf3;
+}
+.btn-line.btn-left{
+    margin-right:15px;
+}
+.btn-line.btn-right{
+    margin-left:5px;
 }
